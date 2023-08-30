@@ -1,5 +1,12 @@
 # 코딩 테스트 준비 (swift)
 
+## 입력받기
+```swift
+let input1 = readline()!
+let input2 = Int(readLine()!)! 
+let input3 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+```
+
 ## 순열 및 조합
 
 ## 이진법
