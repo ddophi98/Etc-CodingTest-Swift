@@ -45,12 +45,26 @@ func permutation(lst: Array<Int>, remain: Int) -> Array<Array<Int>> {
 ```
 
 ## 이진법
+```swift
+let binNum = String(100 ,radix: 2) // 10진수 -> 2진수
+let originNum = Int(binNum, radix: 2)! // 2진수 -> 10진수
+```
 
 ## 정렬
 
 ## 숫자 다루기
+```swift
+5 % 2 // 1
+5 / 2 // 2
+Double(5)/Double(2) // 2.5
+```
 
 ## Array 다루기
+```swift
+var lst = [1, 2, 3, 4, 5]
+Array(lst.prefix(upTo: 2)) // [1, 2]
+Array(lst.suffix(from: 2)) // [3, 4, 5]
+```
 
 ## 문자열 다루기
 
@@ -65,6 +79,13 @@ func permutation(lst: Array<Int>, remain: Int) -> Array<Array<Int>> {
 ## 정규 표현식
 
 ## Extension
-
+```swift
+// String 인덱스로 접근하기
+extension String {
+    subscript(_ index: Int) -> Character {
+        return self[self.index(self.startIndex, offsetBy: index)]
+    }
+}
+```
 
 ## 기타
