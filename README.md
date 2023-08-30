@@ -51,6 +51,15 @@ let originNum = Int(binNum, radix: 2)! // 2진수 -> 10진수
 ```
 
 ## 정렬
+```swift
+lst.sort() // 오름차순
+lst.sort(by: >) // 내림차순
+let newLst = lst.sorted() // 오름차순
+let newLst = lst.sorted(by: >) // 내림차순
+let newLst = [[1, 2], [3, 4]].sorted {
+    ($0[0] < $1[0]) || ($0[1] > $1[1]) // 첫번째는 오름차순, 두번째는 내림차순
+}
+```
 
 ## 숫자 다루기
 ```swift
@@ -61,9 +70,14 @@ Double(5)/Double(2) // 2.5
 
 ## Array 다루기
 ```swift
-var lst = [1, 2, 3, 4, 5]
-Array(lst.prefix(upTo: 2)) // [1, 2]
-Array(lst.suffix(from: 2)) // [3, 4, 5]
+var lst1 = [1, 2, 3, 4, 5]
+var lst2 = ["1", "2", "3", "4", "5"]
+
+Array(lst1.prefix(upTo: 2)) // [1, 2]
+Array(lst1.suffix(from: 2)) // [3, 4, 5]
+
+lst2.joined(separator: "-") // 1-2-3-4-5
+lst2.joined() // 12345
 ```
 
 ## 문자열 다루기
