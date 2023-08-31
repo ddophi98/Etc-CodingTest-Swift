@@ -365,8 +365,8 @@ struct Heap<Element> {
             if candidate == parent {
                 return
             }
-        elements.swapAt(parent, candidate)
-        parent = candidate
+            elements.swapAt(parent, candidate)
+            parent = candidate
         }
     }
     
