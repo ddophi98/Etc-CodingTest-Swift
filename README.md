@@ -245,7 +245,7 @@ set1.intersection(set2) // 교집합
 set1.subtracting(set2) // 차집합
 set1.symmetricDifference(set2) // 합집합 - 교집합
 
-set1.isSubset(of: set2) // set1이 set2의 부분집합이라면
+set1.isSubset(of: set2) // set1이 set2의 부분집합이라면
 set1.isSuperset(of: set2) // set2가 set1의 부분집합이라면
 set1.isDisjoint(with: set2) // 교집합 없다면
 ```
