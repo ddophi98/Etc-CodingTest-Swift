@@ -100,6 +100,8 @@ var lst2 = ["1", "2", "3", "4", "5"]
 var lst3 = Array<Int>()
 var lst4 = [Int]()
 var lst5 = [Int](repeating: 0, count: 10)
+var lst6 = Array(repeating: Array(repeating: 0, count: 3), count: 5) 
+var lst7 = [[Int]](repeating: [Int](repeating: 0, count: 3), count: 5)
 
 // 요소 개수
 lst.count
@@ -402,3 +404,24 @@ extension String {
 ```
 
 ## 기타
+```swift
+print("Hello", terminator:"") // 개행 없는 출력
+for i in stride(from: 3, to: 12, by: 3) {
+    print(i)  // 3, 6, 9
+}
+
+lst.map { Int($0)! } // 요소 한개씩 함수 적용하기
+lst.flatMap { $0 } // 차원 줄이기
+lst.filter { $0 % 2 == 0 } // 조건 만족하는 요소만 뽑아내기
+
+// 최대공약수
+func GCD(_ a: Int, _ b: Int) -> Int {
+    let mod: Int = a % b
+    return 0 == mod ? min(a, b) : GCD(b, mod)
+}
+
+// 최소공배수
+func LCM(_ a: Int, _ b: Int) -> Int {
+    return a * b / GCD(a, b)
+}
+```
