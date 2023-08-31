@@ -79,14 +79,65 @@ String(format: "%.3f", 5.123123) // "5.123" (셋째자리까지 자르기)
 
 ## Array 다루기
 ```swift
+// 배열 생성
 var lst1 = [1, 2, 3, 4, 5]
 var lst2 = ["1", "2", "3", "4", "5"]
+var lst3 = Array<Int>()
+var lst4 = [Int]()
+var lst5 = [Int](repeating: 0, count: 10)
 
-Array(lst1.prefix(upTo: 2)) // [1, 2]
-Array(lst1.suffix(from: 2)) // [3, 4, 5]
+// 배열 개수
+lst.count
+lst.isEmpty
 
-lst2.joined(separator: "-") // 1-2-3-4-5
-lst2.joined() // 12345
+// 요소 접근
+lst[0]
+lst[0...2]
+lst[0..<2]
+lst.first
+lst.last
+
+// 요소 추가
+lst.append(6)
+lst.append(contentsOf: [6, 7, 8])
+lst.insert(0, at: 0)
+lst.insert(contentsOf: [0, 1], at: 0)
+
+// 요소 변경
+lst[0] = 10
+lst[0...2] = [6, 7]
+
+// 요소 삭제
+lst.remove(at: 2)
+lst[0..<2] = []
+lst.removeFirst()
+lst.removeLast() // 없으면 에러
+lst.popLast() // 없으면 nil 반환
+
+// 요소 검색하기
+lst.contains(1)
+lst.contains {
+    num % 2 == 0
+}
+lst.first {
+    num % 2 == 0
+} // 조건 만족하는 첫번째 '값'을 리턴
+lst.firstIndex {
+    num % 2 == 0
+} // 조건 만족하는 첫번째 '인덱스'를 리턴
+lst.last {
+    num % 2 == 0
+} // 조건 만족하는 마지막 '값'을 리턴
+lst.lastIndex {
+    num % 2 == 0
+} // 조건 만족하는 마지막 '인덱스'를 리턴
+
+// 기타
+lst.swapAt(0, 4) // 0번째 값과 4번째 값을 스왑
+lst.shuffle() // 셔플
+lst1 == lst2 // 배열 비교하기
+lst2.joined(separator: "-") // 배열은 문자열로 (1-2-3-4-5)
+lst2.joined() // 배열을 문자열로 (12345)
 ```
 
 ## 문자열 다루기
