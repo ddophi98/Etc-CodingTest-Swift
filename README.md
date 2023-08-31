@@ -185,6 +185,7 @@ var dic3 = Dictionary<String,Int>()
 
 // 요소 개수
 dic.count
+dic.isEmpty
 
 // 요소 접근
 dic["a"] // 없으면 nil
@@ -209,6 +210,35 @@ dic.values
 ```
 
 ## Set 다루기
+```swift
+// 셋 생성
+var set1 = Set<Int>()
+var set2: Set<Int> = [1, 1, 2]
+
+// 요소 개수
+set.count
+set.isEmpty
+
+// 요소 추가
+set.insert(3)
+
+// 요소 삭제
+set.remove(3)
+
+// 요소 검색
+set.contains(3)
+
+// 집합 연산
+set1.union(set2) // 합집합
+set1.intersection(set2) // 교집합
+set1.subtracting(set2) // 차집합
+set1.symmetricDifference(set2) // 합집합 - 교집합
+
+set1.isSubset(of: set2) // set1이 set2의 부분집합이라면
+set1.isSuperset(of: set2) // set2가 set1의 부분집합이라면
+set1.isDisjoint(with: set2) // 교집합 없다면
+```
+
 
 ## Deque 다루기
 
