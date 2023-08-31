@@ -59,6 +59,8 @@ let newLst = lst.sorted(by: >) // 내림차순
 let newLst = [[1, 2], [3, 4]].sorted {
     ($0[0] < $1[0]) || ($0[1] > $1[1]) // 첫번째는 오름차순, 두번째는 내림차순
 }
+let newLst = lst.reversed() // 거꾸로
+lst.reverse() // 거꾸로
 ```
 
 ## 숫자 다루기
@@ -69,6 +71,7 @@ Double(5)/Double(2) // 2.5
 Double.infinity // 무한대
 pow(4, 2) // 26
 sqrt(4) // 2
+abs(-2) // 2
 round(5.123)  // 5.0 (반올림)
 ceil(5.123)  // 6.0 (올림)
 floor(5.765)  // 5.0 (내림)
@@ -86,7 +89,7 @@ var lst3 = Array<Int>()
 var lst4 = [Int]()
 var lst5 = [Int](repeating: 0, count: 10)
 
-// 배열 개수
+// 요소 개수
 lst.count
 lst.isEmpty
 
@@ -116,7 +119,7 @@ lst.removeFirst()
 lst.removeLast() // 없으면 에러
 lst.popLast() // 없으면 nil 반환
 
-// 요소 검색하기
+// 요소 검색
 lst.contains(1)
 lst.contains {
     num % 2 == 0
@@ -174,14 +177,44 @@ str.lowercased()
 ```
 
 ## Dictionary 다루기
+```swift
+// 딕셔너리 생성
+var dic1 = ["a":1,"b":2]
+var dic2 = [String:Int]()
+var dic3 = Dictionary<String,Int>()
+
+// 요소 개수
+dic.count
+
+// 요소 접근
+dic["a"] // 없으면 nil
+
+// 요소 추가 및 변경
+dic["d"] = 4
+
+// 요소 삭제
+dic["a"] = nil
+
+// 요소 순회
+for (key, value) in dic
+
+// 요소 검색
+dic.contains(where: condition) // 조건에 부합하는게 있는지 여부
+dic.first(where: condition) // 조건에 부합하는 튜플 반환
+dic.filter(condition) // 조건에 부합하는 것만 모아서 새 딕셔너리 반환
+
+// 기타
+dic.keys
+dic.values
+```
 
 ## Set 다루기
 
 ## Deque 다루기
 
-## Heap 다루기
+## tuple 다루기
 
-## 정규 표현식
+## Heap 다루기
 
 ## Extension
 ```swift
