@@ -100,7 +100,7 @@ var lst3 = Array<Int>()
 var lst4 = [Int]()
 var lst5 = [Int](repeating: 0, count: 10)
 
-// 요소 개수
+// 요소 개수
 lst.count
 lst.isEmpty
 
@@ -251,7 +251,47 @@ set1.isDisjoint(with: set2) // 교집합 없다면
 ```
 
 ## Deque 다루기
+```swift
+class Deque<T>{
+    private var enQueue: [T]
+    private var deQueue: [T] = []
+    
+    var count: Int {
+        return enQueue.count + deQueue.count
+    }
+    var isEmpty: Bool {
+        return enQueue.isEmpty && deQueue.isEmpty
+    }
+    var queue: [T] {
+        return deQueue.reversed() + enQueue
+    }
 
+    init(_ queue: [T]) {
+        enQueue = queue
+    }
+
+    func appendLeft(_ element: T) {
+        deQueue.append(element)
+    }
+    func append(_ element: T) {
+        enQueue.append(element)
+    }
+    func popLeft() -> T {
+        if deQueue.isEmpty {
+            deQueue = enQueue.reversed()
+            enQueue.removeAll()
+        }
+        return deQueue.popLast()!
+    }
+    func pop() -> T {
+        if enQueue.isEmpty {
+            enQueue = deQueue.reversed()
+            deQueue.removeAll()
+        }
+        return enQueue.popLast()!
+    }
+}
+```
 ## Heap 다루기
 
 ## Extension
