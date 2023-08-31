@@ -5,6 +5,7 @@
 let input1 = readline()!
 let input2 = Int(readLine()!)! 
 let input3 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+let input4 = readLine()!.map{ Int(String($0))! }
 ```
 
 ## 조합 및 순열
