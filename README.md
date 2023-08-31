@@ -94,6 +94,8 @@ lst.isEmpty
 lst[0]
 lst[0...2]
 lst[0..<2]
+lst[...2]
+lst[1..<]
 lst.first
 lst.last
 
@@ -141,6 +143,35 @@ lst2.joined() // 배열을 문자열로 (12345)
 ```
 
 ## 문자열 다루기
+```swift
+let str = "abcdefg"
+
+// 요소 접근
+str[str.startIndex] // a
+str[str.index(str.startIndex, offsetBy: 4)] // e
+str[str.index(str.endIndex, offsetBy: -1)] // g
+str[str.firstIndex(of: "d")]
+str[index1...index2]
+
+// 요소 추가
+str += "hijk"
+str.insert("-", at: index)
+
+// 요소 변경
+str.replacingOccurrences(of: "!", with: "?")
+str.replaceSubrange(index1..<index2, with: "eee")
+
+// 요소 삭제
+str.remove(at: index)
+str.removeSubrange(index1..<index2)
+
+// 기타
+str.range(of: "bcd")
+str.hasPrefix("a")
+str.hasSuffix("g")
+str.uppercased()
+str.lowercased()
+```
 
 ## Dictionary 다루기
 
@@ -158,6 +189,15 @@ lst2.joined() // 배열을 문자열로 (12345)
 extension String {
     subscript(_ index: Int) -> Character {
         return self[self.index(self.startIndex, offsetBy: index)]
+    }
+}
+
+// SubString 슬라이싱으로 접근하기
+extension String {
+    subscript(_ range: Range<Int>) -> String {
+        let fromIndex = self.index(self.startIndex, offsetBy: range.startIndex)
+        let toIndex = self.index(self.startIndex,offsetBy: range.endIndex)
+        return String(self[fromIndex..<toIndex])
     }
 }
 ```
