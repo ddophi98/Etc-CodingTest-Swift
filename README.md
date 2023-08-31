@@ -17,7 +17,7 @@ func combination(lst: Array<Int>, remain: Int) -> Array<Array<Int>> {
     
     var result = [Array<Int>]()
     for i in 0..<lst.count {
-        for rst in combination(lst: Array(lst.suffix(from: i+1)), remain: remain-1) {
+        for rst in combination(lst: Array(lst[i+1..<lst.count]), remain: remain-1) {
             result.append([lst[i]] + rst)
         }
     }
@@ -35,7 +35,7 @@ func permutation(lst: Array<Int>, remain: Int) -> Array<Array<Int>> {
     
     var result = [Array<Int>]()
     for i in 0..<lst.count {
-        for rst in permutation(lst: Array(lst.prefix(upTo: i) + lst.suffix(from: i+1)), remain: remain-1) {
+        for rst in permutation(lst: Array(lst[0..<i] + lst[i+1..<lst.count]), remain: remain-1) {
             result.append([lst[i]] + rst)
         }
     }
