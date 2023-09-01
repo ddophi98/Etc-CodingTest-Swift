@@ -164,6 +164,7 @@ lst.min(by: { first, second in
 // 기타
 lst.swapAt(0, 4) // 0번째 값과 4번째 값을 스왑
 lst.shuffle() // 셔플
+lst.enumerated() // (인덱스, 값) 형태로 변함
 lst1 == lst2 // 배열 비교하기
 lst2.joined(separator: "-") // 배열은 문자열로 (1-2-3-4-5)
 lst2.joined() // 배열을 문자열로 (12345)
