@@ -151,6 +151,16 @@ lst.lastIndex {
     num % 2 == 0
 } // 조건 만족하는 마지막 '인덱스'를 리턴
 
+// 최대, 최소
+lst.max()
+lst.min()
+lst.max(by: { first, second in
+    first.0 < second.0 
+}) // 0번째 값을 기준으로 max 적용
+lst.min(by: { first, second in
+    first.0 < second.0 
+}) // 0번째 값을 기준으로 min 적용
+
 // 기타
 lst.swapAt(0, 4) // 0번째 값과 4번째 값을 스왑
 lst.shuffle() // 셔플
