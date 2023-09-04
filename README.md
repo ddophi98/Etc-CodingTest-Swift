@@ -199,6 +199,7 @@ str.hasPrefix("a")
 str.hasSuffix("g")
 str.uppercased()
 str.lowercased()
+str.map{ String($0) }
 ```
 
 ## Dictionary 다루기
