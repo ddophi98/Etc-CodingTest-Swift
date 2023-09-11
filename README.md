@@ -436,4 +436,10 @@ func GCD(_ a: Int, _ b: Int) -> Int {
 func LCM(_ a: Int, _ b: Int) -> Int {
     return a * b / GCD(a, b)
 }
+
+// Set, Dictionary 키값으로 쓰고 싶을 때
+struct Node: Hashable {
+    let a: Int
+    let b: Int
+}
 ```
