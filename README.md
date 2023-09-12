@@ -58,7 +58,7 @@ lst.sort(by: >) // 내림차순
 let newLst = lst.sorted() // 오름차순
 let newLst = lst.sorted(by: >) // 내림차순
 let newLst = [[1, 2], [3, 4]].sorted {
-    ($0[0] < $1[0]) || ($0[1] > $1[1]) // 첫번째는 오름차순, 두번째는 내림차순
+    ($0[0], -$0[1]) < ($1[0], -$1[1]) // 첫번째는 오름차순, 두번째는 내림차순
 }
 let newLst = lst.reversed() // 거꾸로
 lst.reverse() // 거꾸로
